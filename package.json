@@ -1,0 +1,19 @@
+{
+  "name": "monkey-api",
+  "version": "1.0.0",
+  "description": "A fully-fledged RESTful API. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jrobalino/monkey-api.git"
+  },
+  "author": "Javier Robalino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jrobalino/monkey-api/issues"
+  },
+  "homepage": "https://github.com/jrobalino/monkey-api#readme"
+}

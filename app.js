@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const userRoutes = require('./api/routes/users');
+const profileRoutes = require('./api/routes/profiles');
 
 mongoose.connect('mongodb+srv://almaApp:' + process.env.MONGO_ATLAS_PW + '@alma0-yk1b9.mongodb.net/test?retryWrites=true&w=majority',
 	{
@@ -28,8 +29,8 @@ app.use((req, res, next) => {
 	next();
 })
 
-//app.use('/users', userRoutes);
 app.use('/users', userRoutes);
+app.use('/profile', profileRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error('Not found');

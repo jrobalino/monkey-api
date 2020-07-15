@@ -4,6 +4,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const userRoutes = require('./api/routes/users');
+
 mongoose.connect('mongodb+srv://almaApp:' + process.env.MONGO_ATLAS_PW + '@alma0-yk1b9.mongodb.net/test?retryWrites=true&w=majority',
 	{
 		useNewUrlParser: true, 
@@ -25,6 +27,9 @@ app.use((req, res, next) => {
 	}
 	next();
 })
+
+//app.use('/users', userRoutes);
+app.use('/users', userRoutes);
 
 app.use((req, res, next) => {
 	const error = new Error('Not found');

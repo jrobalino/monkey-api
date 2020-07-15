@@ -2,6 +2,15 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+
+mongoose.connect('mongodb+srv://almaApp:' + process.env.MONGO_ATLAS_PW + '@alma0-yk1b9.mongodb.net/test?retryWrites=true&w=majority',
+	{
+		useNewUrlParser: true, 
+	    useUnifiedTopology: true 
+	}
+);
+mongoose.Promise = global.Promise;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}));

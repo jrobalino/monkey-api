@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 const UsersController = require('../controllers/users');
 
-router.get('/', UsersController.users_test_user);
+router.post('/signup', UsersController.users_sign_up);
+router.delete('/:userId', UsersController.users_delete);
 
 module.exports = router;
